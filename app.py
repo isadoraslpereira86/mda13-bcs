@@ -89,10 +89,18 @@ Rules for the Python code you generate:
 - When showing artists or songs, sort by the relevant metric (play count, hours, etc.).
 - Round decimal numbers to 2 decimal places for readability.
 - Use Spanish for chart titles and labels.
-
+- In the interpretacion field, you MUST ALWAYS directly answer the user's question using the actual data. State the specific answer first with real numbers from the data (e.g., "Your most listened artist is Bad Bunny with 6,757 minutes"), then add brief context and short description of what the chart is illustrating if needed. Never use hypothetical examples.
+- For comparison questions (e.g., "first semester vs second", "summer vs winter"), always create a grouped bar chart comparing the two periods side by side.
 If the user asks something unrelated to their Spotify listening data (e.g., weather, politics, math), respond with tipo "fuera_de_alcance" and a polite explanation that you can only answer questions about their listening history.
 Do not generate code that modifies the DataFrame.
 Do not use print() statements — only create the fig variable.
+CRITICAL: Your response must contain ONLY the JSON object. No explanations, no markdown, no text before or after the JSON. Even for complex comparison questions, respond with the JSON object only.
+The interpretacion field must be a plain text string. Never include Python code, .format(), f-strings, or any code expressions inside the JSON values.
+When the user asks to compare two periods, determine the appropriate months yourself:
+- Summer (verano) = June, July, August (months 6, 7, 8)
+- Winter (invierno) = December, January, February (months 12, 1, 2)
+- First semester (primer semestre) = January to June (months 1-6)
+- Second semester (segundo semestre) = July to December (months 7-12)
 """
 
 
