@@ -2,8 +2,8 @@
 # CABECERA
 # ============================================================
 # Alumno: Isadora de Sampaio Leite Correa
-# URL Streamlit Cloud: https://...streamlit.app
-# URL GitHub: https://github.com/...
+# URL Streamlit Cloud: https://mda13-bcs-ydjvbbld4rek8g3qohgcc8.streamlit.app/
+# URL GitHub: https://github.com/isadoraslpereira86/mda13-bcs
 
 # ============================================================
 # IMPORTS
